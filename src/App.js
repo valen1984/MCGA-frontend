@@ -1,24 +1,12 @@
-import './App.css';
-import {setLoading} from "./redux/Products/actions";
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css"
-import { Form } from "./components/Form/Form";
-import {useSelector, useDispatch} from 'react-redux';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Login from './screens/login';
 
-const App =() =>{
-  const dispatch = useDispatch();
-  const { isLoadingProducts, products } = useSelector((state) => state.products)
- 
-  console.log("products", products);
-  
-  useEffect(() => {
-    dispatch(setLoading());
-  }, [dispatch]);
+
+function App() {
   return (
-    <div className="App">
-      <div>{String(isLoadingProducts)}</div>
-    </div>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
   );
 }
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Form.css';
 
-export const Form = () => {
+ const SharedForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -50,3 +50,4 @@ export const Form = () => {
     </form>
   );
 };
+export default SharedForm;
